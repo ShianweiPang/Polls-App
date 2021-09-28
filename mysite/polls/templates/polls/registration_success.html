@@ -1,0 +1,28 @@
+{% extends 'polls/base/base.html' %}
+{% load static %}
+
+{% block title %}You registered successfully!{% endblock %}
+
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'polls/styles/registration-confirmation.css' %}">
+{% endblock %}
+
+{% block main_heading %}
+  Thanks for signing up! 
+{% endblock %}
+
+{% block body %}
+
+<section id=confirmation>
+    <h2>You registered successfully</h2>
+    <p>Thanks for signing up - see you at the poll</p>
+    <p>Got questions or can't make it? <a href="mailto:{{ organizer_email }}">Please contact the organizer</a> ahead of time</p>
+</section>
+
+<section id=continue>
+    <p>Sign up for another poll</p>
+    <p><a href="/polls" class="btn">Explore our Polls</a></p>
+</section>
+
+{% endblock %}

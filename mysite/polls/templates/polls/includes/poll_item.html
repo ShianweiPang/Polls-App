@@ -1,0 +1,21 @@
+<!-- this serves as the short snippet of html where it can be reused -->
+<li class="poll">
+    <article>
+      <div class="poll-summary">
+        <div class="poll-image">
+          <img src="{{ image }}" alt="" />
+        </div>
+        <div class="poll-details">
+          <h3>{{ title }}</h3>
+          <address>{{ location }}</address>
+        </div>
+      </div>
+      <div class="poll-actions">
+        <!-- tell django to automatically generate the absolute URL to a specific url defined in urls.py file   -->
+        <!-- All it needs is a unique identifier for each URL in url.py file, eg 'name' -->
+        <a href="{% url 'poll-detail' slug %}" class="btn"
+          >More Details</a
+        >
+      </div>
+    </article>
+  </li>

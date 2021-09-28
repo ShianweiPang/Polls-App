@@ -1,0 +1,24 @@
+{% extends 'polls/base/base.html' %} 
+{% load static %}
+{% block title %}All Polls{% endblock %} 
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'polls/styles/all_polls.css' %}" />
+{% endblock %} 
+
+{% block main_heading %}We got great polls coming up!{% endblock %} 
+
+{% block header_content %}
+<p>Find the one that best suits your needs!</p>
+{% endblock %} 
+
+{% block body %}
+<section>
+  <h2>Upcoming polls</h2>
+  <ol>
+    {% for poll in polls %}
+      {% include 'polls/includes/poll_item.html' with title=poll.title location='New York' slug=poll.slug image=poll.image.url %}
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}
